@@ -5,4 +5,4 @@ jobs:
     runs-on: ubuntu-latest 
     steps:
       - name: print message 
-        run: eho "Welcome to githubactions"
+        run: echo "Welcome to githubactions"
