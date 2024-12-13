@@ -3,24 +3,24 @@ name: python github actions
 on: [ push ]
 
 jobs:
- Python Execute:
+ PythonExecute:
    runson: ubuntu-latest
 
- startegy:
-   matrix:
-     python-version: [3.8, 3.9]
+   startegy:
+     matrix:
+       python-version: [3.8, 3.9]
 
- steps: 
-   - uses: actions/checkout@v3
-   - name: setUp Python Environment 
-     uses: action/setup-python@v2
-     with:
-       python-version: ${{matrix.python-version}}
-   - name: Install dependencies 
-     run: |
-         python -m pip install --upgrade pip 
-         pip install pytest 
+   steps: 
+    - uses: actions/checkout@v3
+    - name: setUp Python Environment 
+      uses: action/setup-python@v2
+      with:
+        python-version: ${{matrix.python-version}}
+    - name: Install dependencies 
+      run: |
+           python -m pip install --upgrade pip 
+           pip install pytest 
 
-   - name: Run Tests
-     run: |
+    - name: Run Tests
+      run: |
         python -m pytest addition.py
