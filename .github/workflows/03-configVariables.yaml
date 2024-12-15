@@ -1,0 +1,20 @@
+name: Access config variables 
+
+on: 
+ workflow_dispatch:
+
+env: 
+ platform: github actions :)
+   
+jobs: 
+ ConfigVariables:
+   run-as: ubuntu-latest 
+
+   env: 
+    greeting: HI,
+
+   steps: 
+     - name: accessing configuration variables 
+       run: echo "$greeting $message $platform for project id:${{project_Id}}"
+       env: 
+        message: Welcome to
