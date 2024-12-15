@@ -1,4 +1,4 @@
-name: Variables define in workflow level 
+name: 02-Variables define in workflow level 
 
 on: 
  workflow_dispatch

@@ -1,4 +1,4 @@
-name: Access config variables 
+name: 03-Access config variables 
 
 on: 
  workflow_dispatch:
