@@ -9,7 +9,7 @@ jobs:
     steps: 
       - name: accessing the github context variables 
         run: |
-             echo "Repository_Url: ${{github.github.repositoryUrl}}"
+             echo "Repository_Url: ${{github.repositoryUrl}}"
              echo "triggered_By: ${{github.triggering_actor}}"
              echo "workspace: ${{github.workspace}}"
              echo "Workflow_Number: ${{github.run_number}}"
