@@ -1,0 +1,19 @@
+name: Variables define in workflow level 
+
+on: 
+ workflow_dispatch:
+   
+env: 
+ platform: github Actions :)  # entire workflow level, we can access this variables.
+
+jobs: 
+ variablesDefine: 
+   runs-on: ubuntu 
+   env: 
+     greeting: Hello 
+
+   steps: 
+     - name: display variables values 
+       run: echo $greeting $message $platform
+       env: 
+        message: Welcome to
