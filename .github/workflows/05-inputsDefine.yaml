@@ -1,0 +1,22 @@
+name: 05-Define custom inputs 
+
+on: workflow_dispatch
+
+inputs:
+  number1: 
+    description: value of number1 
+    default: 0
+    required: true
+  number2: 
+    description: value of number2 
+    default: 0 
+    required: true 
+
+
+jobs: 
+ DefineInputs:
+   runs-on: ubuntu-latest
+
+   steps: 
+     - name: Access input variables 
+       run: echo "input1 is :${{inputs.number1}} and input2 is :${{inputs.number2}}"
