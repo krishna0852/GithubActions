@@ -1,0 +1,16 @@
+name: 04-defining context variables
+
+on: workflow_dispatch 
+
+jobs: 
+ contextVars:
+    runs-on: ubuntu-latest
+
+    steps: 
+      - name: accessing the github context variables 
+        run: |
+             echo "Repository_Url: ${{github.github.repositoryUrl}}"
+             echo "triggered_By: ${{github.actor_id	}}"
+             echo "Workflow_Id: ${{github.run_id}}"
+             echo "attempt_No": ${{github.run_attempt}} 
+
