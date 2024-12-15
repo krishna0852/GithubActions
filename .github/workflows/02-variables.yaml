@@ -10,10 +10,14 @@ jobs:
  variablesDefine: 
    runs-on: ubuntu-latest
    env: 
-     greeting: Hello 
+     greeting: Hello       # job level
 
    steps: 
      - name: display variables values 
        run: echo $greeting $message $platform
        env: 
-        message: Welcome to
+        message: Welcome to        # steps level
+     - name: dispaly other vars 
+       run : |
+           echo "Displaying in different stage"
+           echo $greeting $message $platform
