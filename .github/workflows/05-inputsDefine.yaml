@@ -1,16 +1,18 @@
 name: 05-Define custom inputs 
 
-on: workflow_dispatch
+on: 
+  workflow_dispatch:
+      inputs:
+       number1: 
+        description: value of number1 
+        default: 0
+        required: true
+       number2: 
+        description: value of number2 
+        default: 0 
+        required: true    
 
-inputs:
-  number1: 
-    description: value of number1 
-    default: 0
-    required: true
-  number2: 
-    description: value of number2 
-    default: 0 
-    required: true 
+ 
 
 
 jobs: 
