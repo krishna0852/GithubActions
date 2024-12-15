@@ -8,7 +8,7 @@ env:
    
 jobs: 
  ConfigVariables:
-   run-as: ubuntu-latest 
+   runs-on: ubuntu-latest 
 
    env: 
     greeting: HI,
