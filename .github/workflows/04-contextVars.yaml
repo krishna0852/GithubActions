@@ -10,7 +10,8 @@ jobs:
       - name: accessing the github context variables 
         run: |
              echo "Repository_Url: ${{github.github.repositoryUrl}}"
-             echo "triggered_By: ${{github.actor_id	}}"
-             echo "Workflow_Id: ${{github.run_id}}"
+             echo "triggered_By: ${{github.triggering_actor}}"
+             echo "workspace: ${{github.workspace}}"
+             echo "Workflow_Number: ${{github.run_number}}"
              echo "attempt_No": ${{github.run_attempt}} 
 
