@@ -1,7 +1,7 @@
 name: Variables define in workflow level 
 
 on: 
- workflow_dispatch:
+ workflow_dispatch
    
 env: 
  platform: github Actions :)  # entire workflow level, we can access this variables.
