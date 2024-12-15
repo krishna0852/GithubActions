@@ -15,6 +15,6 @@ jobs:
 
    steps: 
      - name: accessing configuration variables 
-       run: echo "$greeting $message $platform for project id:${{project_Id}}"
+       run: echo "$greeting $message $platform for project id:${{vars.project_Id}}"
        env: 
         message: Welcome to
