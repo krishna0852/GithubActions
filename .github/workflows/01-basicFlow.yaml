@@ -3,8 +3,8 @@ name: Basic Flow.
 on : [ push ]
 
 jobs: 
-  Display Message: 
-    run-as: ubuntu-latest 
+  DisplayMessage: 
+    runs-on: ubuntu-latest 
 
     steps: 
       - name: Run echo command 
