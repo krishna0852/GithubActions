@@ -1,0 +1,27 @@
+name: Continuous Integration Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  test:
+    name: 'Run unit tests'
+    defaults:
+      run:
+        shell: bash
+        # Define the working directory for all run steps in the workflow
+        working-directory: ./web
+        # all runs will execue inside web folder eg: npm install, npm run test
+    # Specify the OS we want the workflow to run on
+    runs-on: ubuntu-latest
+    # Define the steps for this job
+    steps:
+    - uses: actions/checkout@v2
+      name: 'Checkout repository'
+
+    - name: 'Install Dependencies'
+      run: npm install
+    
+    - name: 'Run Tests'
+      run: npm run test
