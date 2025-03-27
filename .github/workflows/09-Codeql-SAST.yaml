@@ -1,0 +1,38 @@
+# # codeql is sast tool from github where it scans the code, find vulnerabilites and push it 
+# to the security tab in github. for that we need to grant permission in workflow to push into security tab, By default it has read access for all repo components (contents,actions, security-events, tokens e.t.c)
+# so as defined in 17th line, we need to enable write for security-events to push into security tab.
+
+name: web codescan 
+
+on:
+    workflow_dispatch:
+
+jobs:
+    codeScan:
+     name: set workdir
+     defaults:
+        run:
+            working-directory: ./web
+     runs-on: ubuntu-latest
+     permissions:
+        actions: read
+        contents: read
+        security-events: write
+     
+     strategy:
+        matrix:
+            language: ["javascript"]
+
+     steps:
+        - name: checkout code 
+          uses: actions/checkout@v2
+        - name: Code Scan
+          uses: github/codeql-action/init@v2   # codeql is sast tool from github where it scans the code
+          with:
+            languages: ${{ strategy.matrix.language }}
+
+        - name: Analyze code
+          uses: github/codeql-action/analyze@v2
+          with:
+           # category: ${{ strategy.matrix.language }}
+             category: "/language:${{ matrix.language }}"
