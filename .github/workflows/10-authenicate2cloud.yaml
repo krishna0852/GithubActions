@@ -1,0 +1,23 @@
+name: Get s3 buckets
+
+on:
+  workflow_dispatch:
+
+jobs:
+  getBuckets:
+    permissions:
+      id-token: write
+      contents: read
+    runs-on: ubuntu-latest 
+    steps:
+      - name: get AWS CLI & Assume role   # create oidc connect in aws and allow this repo and branch to access aws services or api calls 
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+            role-to-assume: arn:aws:iam::730335449261:role/githubactions-pract
+            aws-region: us-east-1
+            audience: sts.amazonaws.com
+      - name: Display Buckets
+        run: |
+             aws s3 ls   # list buckets
+             
+    
