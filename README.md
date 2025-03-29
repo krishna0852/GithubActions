@@ -9,5 +9,5 @@ contextVaribales ==> This are pre-defined variables which contains information a
 1) Variables, configvariables, contextvariables
 2) defineInputs, secrets, settingworkingdirectory
 3) strategy-matrix (running multiple versions), codeql
-4) authenticate to aws via odic
+4) authenticate to aws via oidc
 5) self-hosted runners.
