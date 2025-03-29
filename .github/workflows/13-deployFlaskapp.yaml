@@ -38,8 +38,10 @@ jobs:
 
             - name: Deploy App
               run: |
-               nohup python3 app.py &  # nohup will help to run this in background
-               netstat -ant
+                 source venv/bin/activate
+                 nohup python3 app.py > app.log 2>&1 &
+                 sleep 5  # Give some time for the app to start
+                 netstat -ant
     HealthCheck:
         runs-on: self-hosted
         needs: Build
