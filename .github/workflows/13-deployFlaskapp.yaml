@@ -19,7 +19,7 @@ jobs:
             - name: setUp Python environment
               uses: actions/setup-python@v4
               with:
-                python-version: 3.8
+                python-version: 3.9
 
             - name: Setup Virtual Environment
               run: |
