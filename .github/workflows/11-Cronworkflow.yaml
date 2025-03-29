@@ -1,14 +1,15 @@
 name: Trigger workflow on Cron
 
 on:
- schedule:
-   - cron: '* * * * *'
+  schedule:
+    - cron: '* * * * *'
+
 jobs:
- TriggerWorkflow:
+  TriggerWorkflow:
     runs-on: ubuntu-latest
     steps:
-      - name: display Message 
-        run: |
-           echo "Workflow triggered by cron schedule"
+      - name: Display Message
+        run: echo "Workflow triggered by cron schedule"
+
            
       
