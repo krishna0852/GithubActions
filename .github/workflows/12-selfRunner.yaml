@@ -1,0 +1,12 @@
+name: Run workflow on Selfhosted.
+
+on: 
+ workflow_dispatch:
+
+jobs:
+   runAtSelfhosted:
+       runs-on:  self-hosted
+       steps:
+         - name: Display Message
+           run: echo "Running in Selfhosted runner."
+       
