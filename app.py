@@ -7,4 +7,4 @@ def welcome():
     return jsonify(message="You are welcome!")
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=5000, debug=False)
+    app.run(host="52.91.53.62", port=5000, debug=False)
